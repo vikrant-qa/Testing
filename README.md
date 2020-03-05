@@ -1,4 +1,2 @@
-# Testing
-project name-Testing
-project description-Ecommerce
-This File is training 
+# magic-sauce-automation
+UI/Api automation using selenium

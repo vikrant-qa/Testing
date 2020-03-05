@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"API - Login as a registered user","Login with valid registered user details","SUCCESS","2020-03-03T14:58:46.981+05:30[Asia/Calcutta]","0.0","3.95"
+"API - Login as a registered user","Verify that User is not able to Login with invalid Username and invalid Password","SUCCESS","2020-03-03T14:58:51.003+05:30[Asia/Calcutta]","0.0","5.69"
+"API - Login as a registered user","Verify that validation message is displayed in the case when User leaves Username or Password as blank","SUCCESS","2020-03-03T14:58:56.694+05:30[Asia/Calcutta]","0.0","1.23"
+"API - Login as a registered user","We create a login scenario that is used by all api for testing their functionality","SUCCESS","2020-03-03T14:58:57.931+05:30[Asia/Calcutta]","0.0","0.97"
