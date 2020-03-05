@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 public class ConfigLoader {
     public final static Config config = ConfigFactory.load("env");
-    public final static String environment = System.getProperty("env") == null ? "dev" : System.getProperty("env");
+    public final static String environment = System.getProperty("env") == null ? "test" : System.getProperty("env");
     private static final Logger log = LoggerFactory.getLogger(ConfigLoader.class);
 
     public static Config load() {
@@ -17,5 +17,9 @@ public class ConfigLoader {
             return config.getConfig(environment).withFallback(config);
         }
         return config;
+    }
+
+    public static void main(String sr[]){
+        new ConfigLoader().load();
     }
 }

@@ -1,0 +1,6 @@
+package net.mc.tools.models.removePaymentDetailsForSellerAndVendor.RemovePaymentDetailsForSellerAndVendorResponse;
+
+public class RemovePaymentDetailsForSellerAndVendorResponse
+{
+
+}

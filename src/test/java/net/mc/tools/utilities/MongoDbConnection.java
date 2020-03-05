@@ -18,79 +18,13 @@ public class MongoDbConnection {
     MongoClientURI uri = null;
     MongoClient mongoClient = null;
     MongoDatabase database = null;
-    MongoCollection<Document> messagesCollection, notificationsCollection, templatesCollection, environmentsCollection, applicationsCollection, userrolesCollection;
+    MongoCollection<Document> test;
 
-    public void connectNotificationDb() {
-        uri = new MongoClientURI("mongodb://notification:fsdfasdJJKHJHK@enablers01-dev-mdb-mongodb.enablers01-dev.svc.cluster.local:27017/?authSource=notification");
+    public void connectTestDb() {
+        uri = new MongoClientURI("mongodb://root@104.197.214.154:27017/admin?connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1&3t.uriVersion=3&3t.connection.name=test&3t.databases=admin,test-marketcube");
         mongoClient = new MongoClient(uri);
-        database = mongoClient.getDatabase("notification");
-        log.info("Connected to notification database");
-    }
-
-    public void connectConfigurationDb() {
-        uri = new MongoClientURI("mongodb://configuration:fsdfasdJJKHJHK@enablers01-dev-mdb-mongodb.enablers01-dev.svc.cluster.local:27017/?authSource=configuration");
-        mongoClient = new MongoClient(uri);
-        database = mongoClient.getDatabase("configuration");
-        log.info("Connected to configuration database");
-    }
-
-    public void connectRoleManagerDb() {
-        uri = new MongoClientURI("mongodb://roleuser:fsdfasdJJKHJHK@enablers01-dev-mdb-mongodb.enablers01-dev.svc.cluster.local:27017/?authSource=role-manager");
-        mongoClient = new MongoClient(uri);
-        database = mongoClient.getDatabase("role-manager");
-        log.info("Connected to Role Manager database");
-    }
-
-    //Fetching user-roles
-    public MongoCollection queryUserroles() {
-        log.info("******************************** UserRoles ************************************************");
-        userrolesCollection = database.getCollection("userroles");
-        System.out.println("UserRoles  : " + userrolesCollection.count());
-        return userrolesCollection;
-    }
-
-
-    //Fetching Environments
-    public MongoCollection queryEnvironments() {
-        log.info("******************************** Messages ************************************************");
-        environmentsCollection = database.getCollection("Environments");
-        System.out.println("Environments  : " + environmentsCollection.count());
-        return environmentsCollection;
-    }
-
-    //Fetching Applications
-    public MongoCollection queryApplications() {
-        log.info("******************************** Messages ************************************************");
-        applicationsCollection = database.getCollection("Applications");
-        System.out.println("Applications  : " + applicationsCollection.count());
-        return applicationsCollection;
-    }
-
-
-    //Fetching client messages
-    public MongoCollection queryMessages() {
-        log.info("******************************** Messages ************************************************");
-        messagesCollection = database.getCollection("Messages");
-        System.out.println("Messages  : " + messagesCollection.count());
-        return messagesCollection;
-    }
-
-
-    //Fetching market notifications
-    public MongoCollection queryNotifications() {
-        log.info("******************************** Notifications ************************************************");
-        notificationsCollection = database.getCollection("Notifications");
-        System.out.println("Notifications  : " + notificationsCollection.count());
-        return notificationsCollection;
-    }
-
-
-    //Fetching project templates
-    public MongoCollection queryTemplates() {
-        log.info("******************************** Templates ************************************************");
-        templatesCollection = database.getCollection("Templates");
-        System.out.println("Templates : " + templatesCollection.count());
-        return templatesCollection;
+        database = mongoClient.getDatabase("test-marketcube");
+        log.info("Connected to test database");
     }
 
     public void disconnectDb() {
